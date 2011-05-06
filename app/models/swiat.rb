@@ -11,6 +11,8 @@ class Swiat < ActiveRecord::Base
   has_many :dopasowanies
   has_many :users, :through => :dopasowanies
 
+  self.name_attribute = :nazwa
+
   # --- Permissions --- #
 
   def create_permitted?

@@ -7,6 +7,11 @@ class Cecha < ActiveRecord::Base
     timestamps
   end
 
+  has_many :cechas
+  has_many :users, :through => :cechas
+
+  self.name_attribute = :nazwa
+
   # --- Permissions --- #
 
   def create_permitted?

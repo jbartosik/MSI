@@ -1,4 +1,4 @@
-class Dopasowanie < ActiveRecord::Base
+class Stopien < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
@@ -7,7 +7,7 @@ class Dopasowanie < ActiveRecord::Base
     timestamps
   end
 
-  belongs_to :user
+  belongs_to :user, :creator => true
   belongs_to :cecha
   belongs_to :swiat
 
@@ -20,13 +20,13 @@ class Dopasowanie < ActiveRecord::Base
   def update_permitted?
     return false unless user_is?(acting_user)
     return true if new_record?
-    return false if owner_changed?
-    only_changed :dopasowanie
+    return false if user_changed?
+    only_changed? :dopasowanie
   end
 
   def destroy_permitted?
     return false unless user_is?(acting_user)
-    return false if owner_changed?
+    return false if user_changed?
     true
   end
 

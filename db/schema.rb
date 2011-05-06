@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110506190825) do
+ActiveRecord::Schema.define(:version => 20110506201104) do
 
   create_table "cechas", :force => true do |t|
     t.string   "nazwa"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20110506190825) do
     t.datetime "updated_at"
   end
 
-  create_table "dopasowanies", :force => true do |t|
+  create_table "stopiens", :force => true do |t|
     t.float    "dopasowanie"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(:version => 20110506190825) do
     t.integer  "swiat_id"
   end
 
-  add_index "dopasowanies", ["cecha_id"], :name => "index_dopasowanies_on_cecha_id"
-  add_index "dopasowanies", ["swiat_id"], :name => "index_dopasowanies_on_swiat_id"
-  add_index "dopasowanies", ["user_id"], :name => "index_dopasowanies_on_user_id"
+  add_index "stopiens", ["cecha_id"], :name => "index_stopiens_on_cecha_id"
+  add_index "stopiens", ["swiat_id"], :name => "index_stopiens_on_swiat_id"
+  add_index "stopiens", ["user_id"], :name => "index_stopiens_on_user_id"
 
   create_table "swiats", :force => true do |t|
     t.string   "nazwa"
