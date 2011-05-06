@@ -8,6 +8,9 @@ class Swiat < ActiveRecord::Base
     timestamps
   end
 
+  has_many :dopasowanies
+  has_many :users, :through => :dopasowanies
+
   # --- Permissions --- #
 
   def create_permitted?
