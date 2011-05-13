@@ -5,3 +5,11 @@
     </header:>
   </card>
 </def>
+
+<def tag="card" for="Swiat">
+  <card class="swiat" param="default" merge>
+    <header: param>
+      <name/> - opisany w <view with="&this.stopien_opisania(current_user)"/>
+    </header:>
+  </card>
+</def>

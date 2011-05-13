@@ -31,4 +31,7 @@ class Swiat < ActiveRecord::Base
     true
   end
 
+  def stopien_opisania(user)
+    Stopien.swiat_is(self).user_is(user).count.to_f / Cecha.count
+  end
 end
