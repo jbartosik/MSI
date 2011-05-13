@@ -1,0 +1,7 @@
+<def tag="card" for="Stopien">
+  <card class="cecha" param="default" merge>
+    <header: param>
+      <name:swiat/> - <name:cecha/>: <view:dopasowanie/>
+    </header:>
+  </card>
+</def>
