@@ -1,29 +1,36 @@
-<page title="Home">
+<page title="Strona główna">
 
   <body: class="front-page"/>
 
   <content:>
     <header class="content-header">
-      <h1>Welcome to <app-name/></h1>
+      <h1>Witaj w aplikacji do zbierania danych o cechach światów RPG</h1>
       <section class="welcome-message">
-        <h3>Congratulations! Your Hobo Rails App is up and running</h3>
-        <ul>
-          <li>To customise this page: edit app/views/front/index.dryml</li>
-        </ul>
 
         <% if User.count == 0 -%>
-          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <h3 style="margin-top: 20px;">Nie ma żadnych użytkowników - zarejestruj się jako administrator:</h3>
           <form with="&this || User.new" without-cancel>
             <field-list: fields="name, email_address, password, password_confirmation"/>
             <submit: label="Register Administrator"/>
           </form>
         <% end -%>
 
-
       </section>
     </header>
 
     <section class="content-body">
+      <ul>
+        <% if current_user.administrator? %>
+          <li>Jako administrator możesz dodawać nowe światy i cechy.</li>
+        <% end %>
+        <% if current_user.signed_up? %>
+          <li>Jako zarejestrowany użytkownik możesz przeglądać światy i udzielać informacji o nich.</li>
+        <% end %>
+        <% if current_user.guest? %>
+          <li>Jako gość możesz przeglądać światy.</li>
+          <li>Zarejestruj się, żeby pomóc nam zbierać informacje!</li>
+        <% end %>
+      </ul>
     </section>
   </content:>
 
