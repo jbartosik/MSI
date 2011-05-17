@@ -12,4 +12,8 @@ class StopiensController < ApplicationController
     flash[:message] = ''
     redirect_to swiat_path(Stopien.find(params[:id]).swiat)
   end
+
+  index_action :export do
+    response.content_type = 'text/plain'
+  end
 end

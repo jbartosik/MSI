@@ -34,4 +34,16 @@ class Stopien < ActiveRecord::Base
     true
   end
 
+  def self.export
+    result = ''
+    Swiat.all.each do |swiat|
+      sid = swiat.id
+      Cecha.all.each do |cecha|
+        cid = cecha.id
+        val = Stopien.swiat_is(sid).cecha_is(cid).average(:dopasowanie) || 0
+        result += "\nINSERT INTO `cecha_swiat` VALUES(#{cid}, #{sid}, #{val});"
+      end
+    end
+    result
+  end
 end

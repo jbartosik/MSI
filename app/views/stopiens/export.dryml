@@ -1,0 +1,34 @@
+-- Zrzut informacji o cechach --
+
+-- Struktury tabel --
+
+CREATE TABLE IF NOT EXISTS `swiat` (
+  `IDSwiat` int(11) NOT NULL,
+  `nameSwiat` varchar(32) NOT NULL,
+  `opisSwiat` text NOT NULL,
+  PRIMARY KEY (`IDSwiat`)
+);
+
+CREATE TABLE IF NOT EXISTS `cecha` (
+  `IDCecha` bigint(20) NOT NULL,
+  `nameCecha` varchar(20) NOT NULL,
+  `pytanieCecha` text NOT NULL,
+  PRIMARY KEY (`IDCecha`)
+);
+
+CREATE TABLE IF NOT EXISTS `cecha_swiat` (
+  `IDCecha` bigint(20) NOT NULL,
+  `IDSwiat` int(11) NOT NULL,
+  `war` double NOT NULL,
+  PRIMARY KEY (`IDCecha`,`IDSwiat`)
+);
+
+-- Dane --
+-- Swiaty --
+<%= Swiat.export %>
+
+-- Cechy --
+<%= Cecha.export %>
+
+-- Stopnie dopasowania swiatow i cech --
+<%= Stopien.export %>

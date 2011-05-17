@@ -4,6 +4,7 @@ class Cecha < ActiveRecord::Base
 
   fields do
     nazwa :string
+    pytanie :text
     timestamps
   end
 
@@ -30,4 +31,11 @@ class Cecha < ActiveRecord::Base
     true
   end
 
+  def self.export
+    result = ''
+    Cecha.all.each do |cecha|
+      result += "\nINSERT INTO `cecha` VALUES(#{cecha.id}, '#{cecha.nazwa}', '#{cecha.pytanie}');'"
+    end
+    result
+  end
 end

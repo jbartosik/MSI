@@ -3,5 +3,6 @@
     <nav-item href="#{base_url}/">Strona główna</nav-item>
     <nav-item with="&Cecha" if="&current_user.administrator?">Cechy</nav-item>
     <nav-item with="&Swiat">Światy</nav-item>
+    <nav-item href="&export_stopiens_path">Zrzut(sql)</nav-item>
   </navigation>
 </def>

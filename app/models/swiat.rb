@@ -44,4 +44,12 @@ class Swiat < ActiveRecord::Base
     return if user.guest?
     Cecha.all :conditions => "NOT EXISTS (SELECT * FROM stopiens WHERE cecha_id = cechas.id AND user_id = #{user.id})"
   end
+
+  def self.export
+    result = ''
+    Swiat.all.each do |swiat|
+      result += "\nINSERT INTO `swiat` VALUES(#{swiat.id}, '#{swiat.nazwa}', '#{swiat.opis}');"
+    end
+    result
+  end
 end
