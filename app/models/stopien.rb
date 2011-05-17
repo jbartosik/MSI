@@ -11,6 +11,7 @@ class Stopien < ActiveRecord::Base
   belongs_to :cecha
   belongs_to :swiat
 
+  validate :dopasowanie_z_0_1
   # --- Permissions --- #
 
   def create_permitted?
@@ -46,4 +47,11 @@ class Stopien < ActiveRecord::Base
     end
     result
   end
+
+  protected
+    def dopasowanie_z_0_1
+      if dopasowanie < 0 or dopasowanie > 1
+        errors.add(:dopasowanie, 'Dopasowanie pozinno być z przedziału [0,1]')
+      end
+    end
 end

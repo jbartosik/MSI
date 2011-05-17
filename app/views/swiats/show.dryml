@@ -1,13 +1,13 @@
 <show-page>
   <append-content-body: if="&current_user.signed_up?">
-    <with with="&this.opisane(current_user)">
+    <with with="&this.try.opisane(current_user)">
       <if test="&!this.nil?">
         Opisane cechy:
         <collection/>
       </if>
     </with>
 
-    <with with="&this.nie_opisane(current_user)">
+    <with with="&this.try.nie_opisane(current_user)">
       <if test="&!this.nil?">
           Nieopisane cechy:
           <collection>
