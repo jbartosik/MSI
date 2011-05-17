@@ -8,8 +8,8 @@ class Swiat < ActiveRecord::Base
     timestamps
   end
 
-  has_many :dopasowanies
-  has_many :users, :through => :dopasowanies
+  has_many :stopiens
+  has_many :users, :through => :stopiens
 
   self.name_attribute = :nazwa
 
@@ -33,5 +33,15 @@ class Swiat < ActiveRecord::Base
 
   def stopien_opisania(user)
     Stopien.swiat_is(self).user_is(user).count.to_f / Cecha.count
+  end
+
+  def opisane(user)
+    return if user.guest?
+    stopiens.user_is(user)
+  end
+
+  def nie_opisane(user)
+    return if user.guest?
+    Cecha.all :conditions => "NOT EXISTS (SELECT * FROM stopiens WHERE cecha_id = cechas.id AND user_id = #{user.id})"
   end
 end

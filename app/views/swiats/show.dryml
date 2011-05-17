@@ -1,0 +1,20 @@
+<show-page>
+  <append-content-body:>
+    Opisane cechy:
+    <collection with="&this.opisane(current_user)"/>
+
+    Nieopisane cechy:
+    <collection with="&this.nie_opisane(current_user)">
+      <li>
+        <form action="&create_stopien_path">
+          <name/>
+          <input class="dopasowanie-tag float stopien-dopasowanie" id="stopien_dopasowanie" name="stopien[dopasowanie]" type="text"/>
+          <input type="hidden" name="stopien[cecha_id]" value="&this.id" />
+          <input type="hidden" name="stopien[swiat_id]" value="&@swiat.id" />
+          <input type="hidden" name="stopien[user_id]" value="&current_user.id" />
+          <submit label="Opisz"/>
+        </form>
+      </li>
+    </collection>
+  </append-content-body:>
+</show-page>
