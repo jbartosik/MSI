@@ -1,0 +1,7 @@
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Strona główna</nav-item>
+    <nav-item with="&Cecha" if="&current_user.administrator?">Cechy</nav-item>
+    <nav-item with="&Swiat">Światy</nav-item>
+  </navigation>
+</def>

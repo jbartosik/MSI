@@ -9,3 +9,4 @@
 <set-theme name="clean"/>
 
 <include src="taglibs/cards"/>
+<include src="taglibs/main_nav"/>
