@@ -1,0 +1,547 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Cecha"><ht key="cecha.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Stopien"><ht key="stopien.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Swiat"><ht key="swiat.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
+
+
+
+<!-- ====== Cecha Pages ====== -->
+
+<def tag="index-page" for="Cecha">
+  <page merge title="#{ht 'cecha.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page cecha" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="cecha.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="cecha.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="cecha.actions.new">New Cecha</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Cecha">
+  <page merge title="#{ht 'cecha.new.title', :default=>[' New Cecha'] }">
+    <body: class="new-page cecha" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="cecha.new.heading">
+            New Cecha
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'cecha.actions.create', :default=>['Create Cecha']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Cecha">
+  <page merge title="#{ht 'cecha.show.title', :default=>['Cecha'] }">
+
+    <body: class="show-page cecha" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="cecha.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="cecha.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Cecha
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="pytanie" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Cecha">
+  <page merge title="#{ht 'cecha.edit.title', :default=>['Edit Cecha'] }">
+
+    <body: class="edit-page cecha" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="cecha.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Cecha
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'cecha.actions.delete', :default=>['Remove This Cecha']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Stopien Pages ====== -->
+
+<def tag="index-page" for="Stopien">
+  <page merge title="#{ht 'stopien.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page stopien" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="stopien.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="stopien.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="stopien.actions.new">New Stopien</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Stopien">
+  <page merge title="#{ht 'stopien.new.title', :default=>[' New Stopien'] }">
+    <body: class="new-page stopien" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="stopien.new.heading">
+            New Stopien
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'stopien.actions.create', :default=>['Create Stopien']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Stopien">
+  <page merge title="#{ht 'stopien.show.title', :default=>['Stopien'] }">
+
+    <body: class="show-page stopien" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="stopien.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a:user param="creator-link"/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="stopien.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Stopien
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="dopasowanie, cecha, swiat" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Stopien">
+  <page merge title="#{ht 'stopien.edit.title', :default=>['Edit Stopien'] }">
+
+    <body: class="edit-page stopien" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="stopien.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Stopien
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'stopien.actions.delete', :default=>['Remove This Stopien']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Swiat Pages ====== -->
+
+<def tag="index-page" for="Swiat">
+  <page merge title="#{ht 'swiat.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page swiat" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="swiat.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="swiat.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="swiat.actions.new">New Swiat</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Swiat">
+  <page merge title="#{ht 'swiat.new.title', :default=>[' New Swiat'] }">
+    <body: class="new-page swiat" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="swiat.new.heading">
+            New Swiat
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'swiat.actions.create', :default=>['Create Swiat']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Swiat">
+  <page merge title="#{ht 'swiat.show.title', :default=>['Swiat'] }">
+
+    <body: class="show-page swiat" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="swiat.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="swiat.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Swiat
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="opis" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Swiat">
+  <page merge title="#{ht 'swiat.edit.title', :default=>['Edit Swiat'] }">
+
+    <body: class="edit-page swiat" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="swiat.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Swiat
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'swiat.actions.delete', :default=>['Remove This Swiat']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== User Pages ====== -->
+
+<def tag="index-page" for="User">
+  <page merge title="#{ht 'user.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page user" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="user.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">
+            <ht key="user.form.new.heading">New User</ht>
+          </h3>
+          <form with="&@invalid_record || new_for_current_user(User)" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="#{ht 'user.new.title', :default=>[' New User'] }">
+    <body: class="new-page user" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.new.heading">
+            New User
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'user.actions.create', :default=>['Create User']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="#{ht 'user.show.title', :default=>['User'] }">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="user.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="user.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit User
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="email_address, state" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="#{ht 'user.edit.title', :default=>['Edit User'] }">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="user.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit User
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'user.actions.delete', :default=>['Remove This User']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+
+  <page title="#{ht 'user.signup.title', :default=>['Signup']}" merge>
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.signup.heading">
+            Signup
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="#{ht 'user.reset_password.title', :default=>['Reset Password']}" merge>
+
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="user.reset_password.heading">
+            Reset Password
+          </ht>
+        </h2>
+      </header>
+
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
