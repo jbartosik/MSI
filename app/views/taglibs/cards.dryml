@@ -1,13 +1,13 @@
 <def tag="card" for="Stopien">
   <card class="cecha" param="default" merge>
     <header: param>
-      <a><name:swiat/> - <name:cecha/>: <view:dopasowanie/></a>
+      <a><name:rasa/> - <name:cecha/>: <view:dopasowanie/></a>
     </header:>
   </card>
 </def>
 
-<def tag="card" for="Swiat">
-  <card class="swiat" param="default" merge>
+<def tag="card" for="Rasa">
+  <card class="rasa" param="default" merge>
     <header: param>
       <a><name/> - opisany w <view with="&this.stopien_opisania(current_user)"/></a>
     </header:>

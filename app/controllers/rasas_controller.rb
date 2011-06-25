@@ -1,4 +1,4 @@
-class SwiatsController < ApplicationController
+class RasasController < ApplicationController
 
   hobo_model_controller
 

@@ -14,16 +14,16 @@ class StopiensController < ApplicationController
 
     if s.valid?
       s.save!
-      swiat = s.swiat
+      rasa = s.rasa
     else
-      swiat = params[:stopien]['swiat_id']
+      rasa = params[:stopien]['rasa_id']
       flash[:notice] = "Błąd: #{s.errors.values.each{ |e| e}}"
     end
 
-    if swiat.nil?
-      redirect_to swiats_path
+    if rasa.nil?
+      redirect_to rasas_path
     else
-      redirect_to swiat_path(swiat)
+      redirect_to rasa_path(rasa)
     end
 
   end

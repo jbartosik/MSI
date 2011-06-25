@@ -9,7 +9,7 @@ class Stopien < ActiveRecord::Base
 
   belongs_to :user, :creator => true
   belongs_to :cecha
-  belongs_to :swiat
+  belongs_to :rasa
 
   validate :dopasowanie_z_0_1
   # --- Permissions --- #
@@ -37,12 +37,12 @@ class Stopien < ActiveRecord::Base
 
   def self.export
     result = ''
-    Swiat.all.each do |swiat|
-      sid = swiat.id
+    Rasa.all.each do |rasa|
+      sid = rasa.id
       Cecha.all.each do |cecha|
         cid = cecha.id
-        val = Stopien.swiat_is(sid).cecha_is(cid).average(:dopasowanie) || 0
-        result += "\nINSERT INTO `cecha_swiat` VALUES(#{cid}, #{sid}, #{val});"
+        val = Stopien.rasa_is(sid).cecha_is(cid).average(:dopasowanie) || 0
+        result += "\nINSERT INTO `cecha_rasa` VALUES(#{cid}, #{sid}, #{val});"
       end
     end
     result

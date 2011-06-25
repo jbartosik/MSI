@@ -1,34 +1,44 @@
 -- Zrzut informacji o cechach --
 
 -- Struktury tabel --
+CREATE TABLE IF NOT EXISTS `ZR_CECHA` (
+`IDCecha` int(11) NOT NULL AUTO_INCREMENT,
+`Zdanie` varchar(256) COLLATE utf8_polish_ci NOT NULL,
+PRIMARY KEY (`IDCecha`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=5 ;
 
-CREATE TABLE IF NOT EXISTS `swiat` (
-  `IDSwiat` int(11) NOT NULL,
-  `nameSwiat` varchar(32) NOT NULL,
-  `opisSwiat` text NOT NULL,
-  PRIMARY KEY (`IDSwiat`)
-);
+-- --------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `cecha` (
-  `IDCecha` bigint(20) NOT NULL,
-  `nameCecha` varchar(20) NOT NULL,
-  `pytanieCecha` text NOT NULL,
-  PRIMARY KEY (`IDCecha`)
-);
+--
+-- Struktura tabeli dla `ZR_CECHA_RASA`
+--
 
-CREATE TABLE IF NOT EXISTS `cecha_swiat` (
-  `IDCecha` bigint(20) NOT NULL,
-  `IDSwiat` int(11) NOT NULL,
-  `war` double NOT NULL,
-  PRIMARY KEY (`IDCecha`,`IDSwiat`)
-);
+CREATE TABLE IF NOT EXISTS `ZR_CECHA_RASA` (
+`IDCecha` int(11) NOT NULL,
+`IDRasa` int(11) NOT NULL,
+`war` double NOT NULL,
+PRIMARY KEY (`IDCecha`,`IDRasa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla `ZR_RASA`
+--
+
+CREATE TABLE IF NOT EXISTS `ZR_RASA` (
+`IDRasa` int(11) NOT NULL AUTO_INCREMENT,
+`nazwa` varchar(128) COLLATE utf8_polish_ci NOT NULL,
+`opis` text COLLATE utf8_polish_ci NOT NULL,
+PRIMARY KEY (`IDRasa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci AUTO_INCREMENT=5 ;
 
 -- Dane --
--- Swiaty --
-<%= Swiat.export %>
+-- Rasy--
+<%= Rasa.export %>
 
 -- Cechy --
 <%= Cecha.export %>
 
--- Stopnie dopasowania swiatow i cech --
+-- Stopnie dopasowania ras i cech --
 <%= Stopien.export %>

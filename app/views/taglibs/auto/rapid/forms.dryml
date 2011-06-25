@@ -12,24 +12,24 @@
 
 
 
-<def tag="form" for="Stopien">
+<def tag="form" for="Rasa">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="dopasowanie, cecha, swiat, user" param/>
+    <field-list fields="nazwa, opis" param/>
     <div param="actions">
-      <submit label="#{ht 'stopien.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+      <submit label="#{ht 'rasa.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
 
 
 
-<def tag="form" for="Swiat">
+<def tag="form" for="Stopien">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="nazwa, opis" param/>
+    <field-list fields="dopasowanie, cecha, rasa, user" param/>
     <div param="actions">
-      <submit label="#{ht 'swiat.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+      <submit label="#{ht 'stopien.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

@@ -15,7 +15,7 @@
             <form action="&create_stopien_path">
               <input class="dopasowanie-tag stopien-dopasowanie" maxlength="3" size="3" id="stopien_dopasowanie" name="stopien[dopasowanie]" type="text"/>
               <input type="hidden" name="stopien[cecha_id]" value="&this.id" />
-              <input type="hidden" name="stopien[swiat_id]" value="&@swiat.id" />
+              <input type="hidden" name="stopien[rasa_id]" value="&@rasa.id" />
               <input type="hidden" name="stopien[user_id]" value="&current_user.id" />
               <submit label="& 'Opisz ' + this.nazwa.to_s"/>
             </form>

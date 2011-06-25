@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517202808) do
+ActiveRecord::Schema.define(:version => 20110625133332) do
 
   create_table "cechas", :force => true do |t|
     t.string   "nazwa"
@@ -19,25 +19,25 @@ ActiveRecord::Schema.define(:version => 20110517202808) do
     t.text     "pytanie"
   end
 
+  create_table "rasas", :force => true do |t|
+    t.string   "nazwa"
+    t.string   "opis"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stopiens", :force => true do |t|
     t.float    "dopasowanie"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "cecha_id"
-    t.integer  "swiat_id"
+    t.integer  "rasa_id"
   end
 
   add_index "stopiens", ["cecha_id"], :name => "index_stopiens_on_cecha_id"
-  add_index "stopiens", ["swiat_id"], :name => "index_stopiens_on_swiat_id"
+  add_index "stopiens", ["rasa_id"], :name => "index_stopiens_on_rasa_id"
   add_index "stopiens", ["user_id"], :name => "index_stopiens_on_user_id"
-
-  create_table "swiats", :force => true do |t|
-    t.string   "nazwa"
-    t.string   "opis"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

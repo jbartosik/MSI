@@ -28,16 +28,6 @@ MSI::Application.routes.draw do
   delete 'cechas/:id(.:format)' => 'cechas#destroy', :as => 'destroy_cecha', :constraints => { :id => %r([^/.?]+) }
 
 
-  # Resource routes for controller "swiats"
-  get 'swiats(.:format)' => 'swiats#index', :as => 'swiats'
-  get 'swiats/new(.:format)', :as => 'new_swiat'
-  get 'swiats/:id/edit(.:format)' => 'swiats#edit', :as => 'edit_swiat'
-  get 'swiats/:id(.:format)' => 'swiats#show', :as => 'swiat', :constraints => { :id => %r([^/.?]+) }
-  post 'swiats(.:format)' => 'swiats#create', :as => 'create_swiat'
-  put 'swiats/:id(.:format)' => 'swiats#update', :as => 'update_swiat', :constraints => { :id => %r([^/.?]+) }
-  delete 'swiats/:id(.:format)' => 'swiats#destroy', :as => 'destroy_swiat', :constraints => { :id => %r([^/.?]+) }
-
-
   # Lifecycle routes for controller "users"
   post 'users/signup(.:format)' => 'users#do_signup', :as => 'do_user_signup'
   get 'users/signup(.:format)' => 'users#signup', :as => 'user_signup'
@@ -58,5 +48,15 @@ MSI::Application.routes.draw do
   match 'login(.:format)' => 'users#login', :as => 'user_login'
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
+
+
+  # Resource routes for controller "rasas"
+  get 'rasas(.:format)' => 'rasas#index', :as => 'rasas'
+  get 'rasas/new(.:format)', :as => 'new_rasa'
+  get 'rasas/:id/edit(.:format)' => 'rasas#edit', :as => 'edit_rasa'
+  get 'rasas/:id(.:format)' => 'rasas#show', :as => 'rasa', :constraints => { :id => %r([^/.?]+) }
+  post 'rasas(.:format)' => 'rasas#create', :as => 'create_rasa'
+  put 'rasas/:id(.:format)' => 'rasas#update', :as => 'update_rasa', :constraints => { :id => %r([^/.?]+) }
+  delete 'rasas/:id(.:format)' => 'rasas#destroy', :as => 'destroy_rasa', :constraints => { :id => %r([^/.?]+) }
 
 end

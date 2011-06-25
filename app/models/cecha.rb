@@ -34,7 +34,7 @@ class Cecha < ActiveRecord::Base
   def self.export
     result = ''
     Cecha.all.each do |cecha|
-      result += "\nINSERT INTO `cecha` VALUES(#{cecha.id}, '#{cecha.nazwa}', '#{cecha.pytanie}');'"
+      result += "\nINSERT INTO `cecha` VALUES(#{cecha.id}, '#{cecha.nazwa}');'"
     end
     result
   end

@@ -1,4 +1,4 @@
-class Swiat < ActiveRecord::Base
+class Rasa < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
@@ -32,7 +32,7 @@ class Swiat < ActiveRecord::Base
   end
 
   def stopien_opisania(user)
-    Stopien.swiat_is(self).user_is(user).count.to_f / Cecha.count
+    Stopien.rasa_is(self).user_is(user).count.to_f / Cecha.count
   end
 
   def opisane(user)
@@ -47,8 +47,8 @@ class Swiat < ActiveRecord::Base
 
   def self.export
     result = ''
-    Swiat.all.each do |swiat|
-      result += "\nINSERT INTO `swiat` VALUES(#{swiat.id}, '#{swiat.nazwa}', '#{swiat.opis}');"
+    Rasa.all.each do |rasa|
+      result += "\nINSERT INTO `rasa` VALUES(#{rasa.id}, '#{rasa.nazwa}', '#{rasa.opis}');"
     end
     result
   end

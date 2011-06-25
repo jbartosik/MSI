@@ -8,6 +8,14 @@
   </card>
 </def>
 
+<def tag="card" for="Rasa">
+  <card class="rasa" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="Stopien">
   <card class="stopien" param="default" merge>
     <header: param>
@@ -16,14 +24,6 @@
     <body: param>
       <a:user param="creator-link"/>
     </body:>
-  </card>
-</def>
-
-<def tag="card" for="Swiat">
-  <card class="swiat" param="default" merge>
-    <header: param>
-      <h4 param="heading"><a><name/></a></h4>
-    </header:>
   </card>
 </def>
 

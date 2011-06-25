@@ -6,8 +6,8 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Cecha"><ht key="cecha.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Rasa"><ht key="rasa.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Stopien"><ht key="stopien.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Swiat"><ht key="swiat.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -134,6 +134,126 @@
 
 
 
+<!-- ====== Rasa Pages ====== -->
+
+<def tag="index-page" for="Rasa">
+  <page merge title="#{ht 'rasa.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page rasa" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="rasa.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="rasa.collection.count" count="&this.size">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="rasa.actions.new">New Rasa</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Rasa">
+  <page merge title="#{ht 'rasa.new.title', :default=>[' New Rasa'] }">
+    <body: class="new-page rasa" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="rasa.new.heading">
+            New Rasa
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'rasa.actions.create', :default=>['Create Rasa']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Rasa">
+  <page merge title="#{ht 'rasa.show.title', :default=>['Rasa'] }">
+
+    <body: class="show-page rasa" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="rasa.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="rasa.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit Rasa
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="opis" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Rasa">
+  <page merge title="#{ht 'rasa.edit.title', :default=>['Edit Rasa'] }">
+
+    <body: class="edit-page rasa" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="rasa.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit Rasa
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'rasa.actions.delete', :default=>['Remove This Rasa']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
 <!-- ====== Stopien Pages ====== -->
 
 <def tag="index-page" for="Stopien">
@@ -221,7 +341,7 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="dopasowanie, cecha, swiat" param/>
+            <field-list fields="dopasowanie, cecha, rasa" param/>
           </section>
     </content:>
 
@@ -242,126 +362,6 @@
           </ht>
         </h2>
         <delete-button label="#{ht 'stopien.actions.delete', :default=>['Remove This Stopien']}" param/>
-      </section>
-
-      <section param="content-body">
-        <form param/>
-      </section>
-    </content:>
-
-  </page>
-</def>
-
-
-
-
-
-<!-- ====== Swiat Pages ====== -->
-
-<def tag="index-page" for="Swiat">
-  <page merge title="#{ht 'swiat.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page swiat" param/>
-
-    <content: param>
-      <header param="content-header">
-        <h2 param="heading">
-          <ht key="swiat.index.heading">
-            <model-name-human model="&model"/>
-          </ht>
-        </h2>
-
-        <p param="count" if>
-          <ht key="swiat.collection.count" count="&this.size">
-            <count summary/>
-          </ht>
-        </p>
-      </header>
-
-      <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="swiat.actions.new">New Swiat</ht>
-        </a>
-
-        <page-nav param="top-page-nav"/>
-
-        <collection param/>
-
-        <page-nav param="bottom-page-nav"/>
-
-
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="new-page" for="Swiat">
-  <page merge title="#{ht 'swiat.new.title', :default=>[' New Swiat'] }">
-    <body: class="new-page swiat" param/>
-
-    <content: param>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="swiat.new.heading">
-            New Swiat
-          </ht>
-        </h2>
-      </section>
-
-      <section param="content-body">
-        <form param>
-          <submit: label="#{ht 'swiat.actions.create', :default=>['Create Swiat']}"/>
-        </form>
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="show-page" for="Swiat">
-  <page merge title="#{ht 'swiat.show.title', :default=>['Swiat'] }">
-
-    <body: class="show-page swiat" param/>
-
-    <content: param>
-          <header param="content-header">
-            <h2 param="heading">
-              <ht key="swiat.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
-                <name/>
-              </ht>
-            </h2>
-
-            <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="swiat.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Swiat
-              </ht>
-            </a>
-          </header>
-
-          <section param="content-body">
-            <field-list fields="opis" param/>
-          </section>
-    </content:>
-
-  </page>
-</def>
-
-
-<def tag="edit-page" for="Swiat">
-  <page merge title="#{ht 'swiat.edit.title', :default=>['Edit Swiat'] }">
-
-    <body: class="edit-page swiat" param/>
-
-    <content:>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="swiat.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Swiat
-          </ht>
-        </h2>
-        <delete-button label="#{ht 'swiat.actions.delete', :default=>['Remove This Swiat']}" param/>
       </section>
 
       <section param="content-body">
