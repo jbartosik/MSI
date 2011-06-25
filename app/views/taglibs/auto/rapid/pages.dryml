@@ -29,7 +29,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="cecha.collection.count" count="&this.size">
+          <ht key="cecha.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -149,7 +149,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="rasa.collection.count" count="&this.size">
+          <ht key="rasa.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -269,7 +269,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="stopien.collection.count" count="&this.size">
+          <ht key="stopien.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -391,7 +391,7 @@
         </h2>
 
         <p param="count" if>
-          <ht key="user.collection.count" count="&this.size">
+          <ht key="user.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
