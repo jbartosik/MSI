@@ -51,7 +51,7 @@ class Stopien < ActiveRecord::Base
   protected
     def dopasowanie_z_0_1
       if dopasowanie < 0 or dopasowanie > 1
-        errors.add(:dopasowanie, 'Dopasowanie pozinno być z przedziału [0,1]')
+        errors.add(:dopasowanie, 'Dopasowanie powinno byc z przedzialu [0,1]')
       end
     end
 end

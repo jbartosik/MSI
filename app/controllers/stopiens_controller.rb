@@ -17,7 +17,7 @@ class StopiensController < ApplicationController
       rasa = s.rasa
     else
       rasa = params[:stopien]['rasa_id']
-      flash[:notice] = "Błąd: #{s.errors.values.each{ |e| e}}"
+      flash[:notice] = "Blad: #{s.errors.values.each{ |e| e}}"
     end
 
     if rasa.nil?

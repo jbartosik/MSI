@@ -5,19 +5,6 @@
 MSI::Application.routes.draw do
 
 
-  # Index action routes for controller "stopiens"
-  get 'stopiens/export(.:format)', :as => 'export_stopiens'
-
-  # Resource routes for controller "stopiens"
-  get 'stopiens(.:format)' => 'stopiens#index', :as => 'stopiens'
-  get 'stopiens/new(.:format)', :as => 'new_stopien'
-  get 'stopiens/:id/edit(.:format)' => 'stopiens#edit', :as => 'edit_stopien'
-  get 'stopiens/:id(.:format)' => 'stopiens#show', :as => 'stopien', :constraints => { :id => %r([^/.?]+) }
-  post 'stopiens(.:format)' => 'stopiens#create', :as => 'create_stopien'
-  put 'stopiens/:id(.:format)' => 'stopiens#update', :as => 'update_stopien', :constraints => { :id => %r([^/.?]+) }
-  delete 'stopiens/:id(.:format)' => 'stopiens#destroy', :as => 'destroy_stopien', :constraints => { :id => %r([^/.?]+) }
-
-
   # Resource routes for controller "cechas"
   get 'cechas(.:format)' => 'cechas#index', :as => 'cechas'
   get 'cechas/new(.:format)', :as => 'new_cecha'
@@ -26,6 +13,16 @@ MSI::Application.routes.draw do
   post 'cechas(.:format)' => 'cechas#create', :as => 'create_cecha'
   put 'cechas/:id(.:format)' => 'cechas#update', :as => 'update_cecha', :constraints => { :id => %r([^/.?]+) }
   delete 'cechas/:id(.:format)' => 'cechas#destroy', :as => 'destroy_cecha', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "rasas"
+  get 'rasas(.:format)' => 'rasas#index', :as => 'rasas'
+  get 'rasas/new(.:format)', :as => 'new_rasa'
+  get 'rasas/:id/edit(.:format)' => 'rasas#edit', :as => 'edit_rasa'
+  get 'rasas/:id(.:format)' => 'rasas#show', :as => 'rasa', :constraints => { :id => %r([^/.?]+) }
+  post 'rasas(.:format)' => 'rasas#create', :as => 'create_rasa'
+  put 'rasas/:id(.:format)' => 'rasas#update', :as => 'update_rasa', :constraints => { :id => %r([^/.?]+) }
+  delete 'rasas/:id(.:format)' => 'rasas#destroy', :as => 'destroy_rasa', :constraints => { :id => %r([^/.?]+) }
 
 
   # Lifecycle routes for controller "users"
@@ -50,13 +47,16 @@ MSI::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
 
-  # Resource routes for controller "rasas"
-  get 'rasas(.:format)' => 'rasas#index', :as => 'rasas'
-  get 'rasas/new(.:format)', :as => 'new_rasa'
-  get 'rasas/:id/edit(.:format)' => 'rasas#edit', :as => 'edit_rasa'
-  get 'rasas/:id(.:format)' => 'rasas#show', :as => 'rasa', :constraints => { :id => %r([^/.?]+) }
-  post 'rasas(.:format)' => 'rasas#create', :as => 'create_rasa'
-  put 'rasas/:id(.:format)' => 'rasas#update', :as => 'update_rasa', :constraints => { :id => %r([^/.?]+) }
-  delete 'rasas/:id(.:format)' => 'rasas#destroy', :as => 'destroy_rasa', :constraints => { :id => %r([^/.?]+) }
+  # Index action routes for controller "stopiens"
+  get 'stopiens/export(.:format)', :as => 'export_stopiens'
+
+  # Resource routes for controller "stopiens"
+  get 'stopiens(.:format)' => 'stopiens#index', :as => 'stopiens'
+  get 'stopiens/new(.:format)', :as => 'new_stopien'
+  get 'stopiens/:id/edit(.:format)' => 'stopiens#edit', :as => 'edit_stopien'
+  get 'stopiens/:id(.:format)' => 'stopiens#show', :as => 'stopien', :constraints => { :id => %r([^/.?]+) }
+  post 'stopiens(.:format)' => 'stopiens#create', :as => 'create_stopien'
+  put 'stopiens/:id(.:format)' => 'stopiens#update', :as => 'update_stopien', :constraints => { :id => %r([^/.?]+) }
+  delete 'stopiens/:id(.:format)' => 'stopiens#destroy', :as => 'destroy_stopien', :constraints => { :id => %r([^/.?]+) }
 
 end
